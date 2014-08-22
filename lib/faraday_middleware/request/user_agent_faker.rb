@@ -4,7 +4,9 @@ module FaradayMiddleware
   class UserAgentFaker < Faraday::Middleware
     VERSION = '0.0.1'
 
-    UASS = IO.readlines(File.expand_path('data/uass.txt'))
+    UASS_FILE = File.expand_path(File.dirname(__FILE__) + '/../../../data/uass.txt')
+
+    UASS = IO.readlines UASS_FILE
 
     def self.uas
       UASS[rand UASS.length].chomp

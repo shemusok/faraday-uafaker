@@ -1,9 +1,9 @@
 require 'nokogiri'
-require 'faraday_uafaker.rb'
+require 'faraday-uafaker.rb'
 
 describe FaradayMiddleware::UserAgentFaker do
   it "file with UA strings must exists" do
-    expect(File::exists?('data/uass.txt')).to eq true
+    expect(File::exists?(FaradayMiddleware::UserAgentFaker::UASS_FILE)).to eq true
   end
 
   it 'must choose one of known UA string' do
