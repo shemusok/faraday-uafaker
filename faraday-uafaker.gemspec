@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["shemusok@gmail.com"]
   spec.summary       = %q{Faraday middleware for faking UA string.}
   spec.description   = %q{Lorem ipsum.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/shemusok/faraday-uafaker"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -21,6 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "nokogiri", "~> 1.6.3"
+  spec.add_development_dependency 'nokogiri', '~> 1.6', '>= 1.6.3'
   spec.add_dependency "faraday", "~> 0.9"
 end
