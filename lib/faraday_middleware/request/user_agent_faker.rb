@@ -12,8 +12,12 @@ module FaradayMiddleware
       UASS[rand UASS.length].chomp
     end
 
+    def uas
+      @uas ||= self.class.uas
+    end
+
     def call(env)
-      env[:request_headers]['User-Agent'] = self.class::uas
+      env[:request_headers]['User-Agent'] = uas
       @app.call(env)
     end
   end

@@ -9,7 +9,7 @@ describe FaradayMiddleware::UserAgentFaker do
   it 'must choose one of known UA string' do
     uas = FaradayMiddleware::UserAgentFaker::uas
     expect(FaradayMiddleware::UserAgentFaker::UASS.include?("#{uas}\n")).to eq true
-  end 
+  end
 
   it 'must choose each time new UA string' do
     uas1 = FaradayMiddleware::UserAgentFaker::uas
@@ -33,10 +33,10 @@ describe FaradayMiddleware::UserAgentFaker do
       expect(FaradayMiddleware::UserAgentFaker::UASS.include?("#{uas}\n")).to eq true
     end
 
-    it 'must each time send random UA string' do
+    it 'must keep one random UA string during whole connection' do
       uas1 = Nokogiri::HTML(conn.get().body).css('#uas_textfeld').text
       uas2 = Nokogiri::HTML(conn.get().body).css('#uas_textfeld').text
-      expect(uas1).not_to eq uas2
+      expect(uas1).to eq uas2
     end
   end
 end
