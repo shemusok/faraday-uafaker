@@ -2,7 +2,7 @@ require 'faraday'
 
 module FaradayMiddleware
   class UserAgentFaker < Faraday::Middleware
-    VERSION = '0.0.3'
+    VERSION = '0.0.4'
 
     UASS_FILE = File.expand_path(File.dirname(__FILE__) + '/../../../data/uass.txt')
 
